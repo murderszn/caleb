@@ -5,24 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caleb Johnson</title>
   <style>
+    /* Matrix Code Fall Styles */
+    html,
     body {
-      font-family: Consolas, monospace; /* Monospace font */
-      background-color: #123; /* Updated background color */
-      color: #00bfff; /* Blue text color */
+      height: 100%;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      overflow: hidden;
+      background-color: #000;
+      color: rgb(0, 0, 255);
+      font-family: monospace;
     }
 
+    .matrix-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .matrix ul {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .matrix li {
+      color: rgb(0, 0, 255);
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    @keyframes fall {
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+
+    /* Your Linktree Styles */
     .container {
       max-width: 600px;
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
       border-radius: 10px;
       color: #00bfff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center container vertically and horizontally */
     }
 
     header {
@@ -77,10 +116,13 @@
   </style>
 </head>
 <body>
+  <div class="matrix-container">
+    <ul class="matrix"></ul>
+  </div>
+
   <div class="container">
     <header>
       <h1>Caleb Johnson</h1>
-      <img src="caleb_profile.jpg" alt="Caleb Johnson">
     </header>
 
     <main>
@@ -96,5 +138,38 @@
       <p>© 2024 Caleb Johnson</p>
     </footer>
   </div>
+
+  <script>
+    const matrix = document.querySelector('.matrix');
+    const matrixContainer = document.querySelector('.matrix-container');
+
+    matrixContainer.style.height = window.innerHeight + 'px';
+
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポヴヷヸヹヺ';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    const createLetter = () => {
+      const letter = document.createElement('li');
+      letter.textContent = katakana[Math.floor(Math.random() * katakana.length)];
+      // Or for Latin characters: letter.textContent = latin[Math.floor(Math.random() * latin.length)];
+      let letterTop = Math.random() * 100 + 50;
+      let letterLeft = Math.random() * 100;
+      letter.style.top = letterTop + '%';
+      letter.style.left = letterLeft + '%';
+      letter.style.fontSize = Math.random() * 16 + 16 + 'px';
+      letter.style.opacity = 0;
+
+      matrix.appendChild(letter);
+
+      setTimeout(() => {
+        letter.style.opacity = 1;
+        letter.style.top = -100 + '%';
+        letter.style.left = letterLeft + '%';
+        letter.style.animation = 'fall 3s ease-out infinite';
+      }, 50);
+    }
+
+    setInterval(createLetter, 150);
+  </script>
 </body>
 </html>
