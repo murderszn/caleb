@@ -51,65 +51,68 @@
       }
     }
 
-    /* Your Linktree Styles */
-    .container {
-      max-width: 600px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-      border-radius: 10px;
-      color: #00bfff;
+    /* Layout for Videos and Linktree */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); /* Center container vertically and horizontally */
+      transform: translate(-50%, -50%);
+      z-index: 1;
     }
 
-    header {
-      text-align: center;
+    .video-container {
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .linktree-container {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      color: #00bfff;
       padding: 20px;
     }
 
-    header h1 {
+    /* Your Linktree Styles */
+    .linktree-container h1 {
+      text-align: center;
       font-size: 36px;
       margin: 0;
     }
 
-    header p {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    header img {
-      border-radius: 50%;
-      width: 200px;
-      margin: 0 auto; /* Center image horizontally */
-    }
-
-    main ul {
+    .linktree-container ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
 
-    main li {
+    .linktree-container li {
       margin: 10px 0;
     }
 
-    main a {
+    .linktree-container a {
       text-decoration: none;
-      color: #00bfff; /* Blue links */
+      color: #00bfff;
       font-weight: bold;
       display: block;
       padding: 10px;
       border-radius: 5px;
-      transition: all 0.3s ease; /* Add smooth hover effect */
+      transition: all 0.3s ease;
     }
 
-    main a:hover {
-      background-color: rgba(0, 255, 255, 0.2); /* Cyan hover effect */
+    .linktree-container a:hover {
+      background-color: rgba(0, 255, 255, 0.2);
     }
 
-    footer {
+    .linktree-container footer {
       text-align: center;
       padding: 10px;
     }
@@ -120,56 +123,39 @@
     <ul class="matrix"></ul>
   </div>
 
-  <div class="container">
-    <header>
+  <div class="content-wrapper">
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/zNSP19decA8?si=gClI3CAWrNsesQKH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/nDsmEhsd9qk?si=0ZlIF1x_EoQz6pQe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="linktree-container">
       <h1>Caleb Johnson</h1>
-    </header>
-
-    <main>
       <ul>
         <li><a href="https://www.instagram.com/calebjohnson" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
         <li><a href="https://www.roblox.com/users/4198920279/profile?friendshipSourceType=PlayerSearch" target="_blank"><i class="fab fa-roblox"></i> Roblox</a></li>
         <li><a href="https://www.youtube.com/@vibevr_gt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
         <li><a href="https://docs.google.com/document/d/1pLU_DNNM_fLWvx4T1XAquQr9xcCPKPAwHCFMBVAPU7E/edit?usp=sharing" target="_blank">Resume</a></li>
       </ul>
-    </main>
-
-    <footer>
-      <p>© 2024 Caleb Johnson</p>
-    </footer>
+      <footer>
+        <p>© 2024 Caleb Johnson</p>
+      </footer>
+    </div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/h61Pzl3qFYg?si=hJV2wfiMBM1xjFme" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    
+    <div class="video-container"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
-
   <script>
-    const matrix = document.querySelector('.matrix');
-    const matrixContainer = document.querySelector('.matrix-container');
-
-    matrixContainer.style.height = window.innerHeight + 'px';
-
-    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポヴヷヸヹヺ';
-    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    const createLetter = () => {
-      const letter = document.createElement('li');
-      letter.textContent = katakana[Math.floor(Math.random() * katakana.length)];
-      // Or for Latin characters: letter.textContent = latin[Math.floor(Math.random() * latin.length)];
-      let letterTop = Math.random() * 100 + 50;
-      let letterLeft = Math.random() * 100;
-      letter.style.top = letterTop + '%';
-      letter.style.left = letterLeft + '%';
-      letter.style.fontSize = Math.random() * 16 + 16 + 'px';
-      letter.style.opacity = 0;
-
-      matrix.appendChild(letter);
-
-      setTimeout(() => {
-        letter.style.opacity = 1;
-        letter.style.top = -100 + '%';
-        letter.style.left = letterLeft + '%';
-        letter.style.animation = 'fall 3s ease-out infinite';
-      }, 50);
-    }
-
-    setInterval(createLetter, 150);
+    // You would need to place JavaScript here to fetch the latest video IDs from YouTube API
+    // and replace the 'VIDEO_ID_4' to 'VIDEO_ID_8' with the actual video IDs dynamically.
   </script>
 </body>
 </html>
